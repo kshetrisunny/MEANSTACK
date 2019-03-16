@@ -73,7 +73,7 @@ export class AppService {
     }
 
     deletePerson(personId: string): Observable<Response> {
-        return this.http.delete(this.appConstants.PersonCrudUrl + '/' + personId).pipe(
+        return this.http.delete(this.appConstants.PersonCrudUrl + '?id=' + personId).pipe(
             map(this.extractData),
             tap((response) => console.log(`delete client response: ${response.status}`)),
             catchError(this.handleError<any>('deletePerson')),

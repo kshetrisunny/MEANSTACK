@@ -209,9 +209,10 @@ export class AppComponent implements OnInit {
   }
 
   deletePerson(personId: string) {
-    this.appService.deletePerson(personId).subscribe(res => {
+    this.appService.deletePerson(personId).subscribe((res) => {
       this.getPersonData();
       this.cancelDeletePerson();
+      console.log(res);
     });
   }
 
